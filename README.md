@@ -4,16 +4,23 @@ Copie vendorisée (figée, versionnée) de skills Claude Code, pour une installa
 
 ## Installation
 
+**macOS/Linux/VPS :**
 ```bash
 git clone https://github.com/midoxavier/kamal-claude-skills.git
-ln -s "$(pwd)/kamal-claude-skills/skills/humanizer" ~/.claude/skills/humanizer
-ln -s "$(pwd)/kamal-claude-skills/skills/copywriting" ~/.claude/skills/copywriting
-ln -s "$(pwd)/kamal-claude-skills/skills/ad-creative" ~/.claude/skills/ad-creative
-ln -s "$(pwd)/kamal-claude-skills/skills/marketing-psychology" ~/.claude/skills/marketing-psychology
-ln -s "$(pwd)/kamal-claude-skills/skills/cro" ~/.claude/skills/cro
+mkdir -p ~/.claude/skills
+for s in humanizer copywriting ad-creative marketing-psychology cro; do
+  ln -s "$(pwd)/kamal-claude-skills/skills/$s" ~/.claude/skills/$s
+done
 ```
 
-(Sur Windows, `New-Item -ItemType SymbolicLink` à la place de `ln -s`.)
+**Windows (pas besoin de droits admin — jonction de répertoire, pas un vrai symlink) :**
+```powershell
+git clone https://github.com/midoxavier/kamal-claude-skills.git $env:USERPROFILE\kamal-claude-skills
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills" | Out-Null
+foreach ($s in "humanizer","copywriting","ad-creative","marketing-psychology","cro") {
+  cmd /c mklink /J "$env:USERPROFILE\.claude\skills\$s" "$env:USERPROFILE\kamal-claude-skills\skills\$s"
+}
+```
 
 ## Contenu
 
