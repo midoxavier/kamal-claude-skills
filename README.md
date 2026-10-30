@@ -17,7 +17,7 @@ done
 ```powershell
 git clone https://github.com/midoxavier/kamal-claude-skills.git $env:USERPROFILE\kamal-claude-skills
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills" | Out-Null
-foreach ($s in "humanizer","copywriting","ad-creative","marketing-psychology","cro") {
+foreach ($s in "humanizer","copywriting","ad-creative","marketing-psychology","cro","avoid-ai-writing","seo-write-article","seo-outline-article","seo-content","seo-schema","seo-images","seo-brand-voice","seo-page","seo-image-gen") {
   cmd /c mklink /J "$env:USERPROFILE\.claude\skills\$s" "$env:USERPROFILE\kamal-claude-skills\skills\$s"
 }
 ```
@@ -31,6 +31,15 @@ foreach ($s in "humanizer","copywriting","ad-creative","marketing-psychology","c
 | `ad-creative` | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | voir LICENSE |
 | `marketing-psychology` | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | voir LICENSE |
 | `cro` | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | voir LICENSE |
+| `avoid-ai-writing` | [conorbronsdon/avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing) | voir LICENSE |
+| `seo-write-article` | [Abderrahim-KHALID/claude-seo](https://github.com/Abderrahim-KHALID/claude-seo) | MIT |
+| `seo-outline-article` | [Abderrahim-KHALID/claude-seo](https://github.com/Abderrahim-KHALID/claude-seo) | MIT |
+| `seo-content` | [Abderrahim-KHALID/claude-seo](https://github.com/Abderrahim-KHALID/claude-seo) | MIT |
+| `seo-schema` | [Abderrahim-KHALID/claude-seo](https://github.com/Abderrahim-KHALID/claude-seo) | MIT |
+| `seo-images` | [Abderrahim-KHALID/claude-seo](https://github.com/Abderrahim-KHALID/claude-seo) | MIT |
+| `seo-brand-voice` | [Abderrahim-KHALID/claude-seo](https://github.com/Abderrahim-KHALID/claude-seo) | MIT |
+| `seo-page` | [Abderrahim-KHALID/claude-seo](https://github.com/Abderrahim-KHALID/claude-seo) | MIT |
+| `seo-image-gen` (extension banana/Gemini) | [Abderrahim-KHALID/claude-seo](https://github.com/Abderrahim-KHALID/claude-seo) | voir LICENSE.txt |
 
 Copie figée le 2026-10-30. Pour mettre à jour un skill, re-cloner le repo source et remplacer le dossier correspondant manuellement (jamais de sync automatique — c'est le but : contrôle de version, pas de dérive silencieuse).
 
